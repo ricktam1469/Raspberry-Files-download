@@ -1,0 +1,54 @@
+# At the time of creation of this sample, the security permissions system is down. 
+# Later work will be necessary to add the necessary permissions.  
+# WebSocket River Sample bundle permission resource
+#
+# Allow all imports
+#(org.osgi.framework.PackagePermission "*" "import")
+(org.osgi.framework.PackagePermission "com.ge.dspmicro.river.api" "import")
+(org.osgi.framework.PackagePermission "com.ge.dspmicro.websocketriver.send.api" "import")
+(org.osgi.framework.PackagePermission "com.ge.dspmicro.machinegateway.types" "import")
+(org.osgi.framework.PackagePermission "org.osgi.framework" "import")
+(org.osgi.framework.PackagePermission "org.osgi.service.component" "import")
+(org.osgi.framework.PackagePermission "org.slf4j" "import")
+(org.osgi.framework.PackagePermission "org.osgi.service.cm" "import")
+
+# Allow bundle to get other services
+(org.osgi.framework.ServicePermission "com.ge.dspnet.datariver.common.api.PingConstants" "get")
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.river.api.IRiverSend" "get")
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.river.api.IRiverStatusCallback" "get")
+(org.osgi.framework.ServicePermission "org.osgi.service.cm.ConfigurationAdmin" "get")
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.websocketriver.send.api.IWebsocketSend" "get")
+(org.osgi.framework.ServicePermission "org.apache.http.osgi.services.ProxyConfiguration" "get")
+
+# Bundle Wiring for pax logging.
+(org.osgi.framework.AdaptPermission "(adaptClass=org.osgi.framework.wiring.BundleRevision)" "adapt")
+
+# allow capability access to OSGi
+(org.osgi.framework.CapabilityPermission "osgi.ee" "require")
+
+# Generic stuff
+(java.lang.RuntimePermission "accessDeclaredMembers")
+(java.lang.reflect.ReflectPermission "suppressAccessChecks")
+
+# Allow bundle's authority to configure bundles.
+(org.osgi.service.cm.ConfigurationPermission "*" "configure")
+
+# Allow bundle to publish event on topic within the OSGi EventAdmin service.
+(org.osgi.service.event.TopicPermission "*" "publish")
+
+# Allow reading of system properties
+(java.util.PropertyPermission "*" "read")
+
+# Allow reading of environment variables
+(java.lang.RuntimePermission "getenv.*")
+(java.lang.RuntimePermission "modifyThread")
+
+# Allow retrieval of class loader
+(java.lang.RuntimePermission "getClassLoader")
+(java.lang.RuntimePermission "shutdownHooks")
+(java.lang.reflect.ReflectPermission "newProxyInPackage.*")
+(java.lang.RuntimePermission "setContextClassLoader")
+(java.lang.RuntimePermission "accessDeclaredMembers")
+
+# Allow access to network via sockets 
+(java.net.SocketPermission "*" "accept,connect,listen,resolve")

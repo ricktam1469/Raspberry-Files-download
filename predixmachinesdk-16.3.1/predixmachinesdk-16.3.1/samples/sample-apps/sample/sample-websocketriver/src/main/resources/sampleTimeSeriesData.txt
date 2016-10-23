@@ -1,0 +1,18 @@
+
+    {
+        "name": "sensor_tag_1234",
+        "datapoints": [
+            [
+                1435854353541,
+                4
+            ],
+            [
+                1435854356541,
+                2
+            ]
+        ],
+        "attributes": {
+            "asset_id": "UA231231",
+            "site_id": "LOC12"
+        }
+    }

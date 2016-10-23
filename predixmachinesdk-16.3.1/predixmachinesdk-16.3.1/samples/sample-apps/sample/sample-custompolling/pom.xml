@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ge.dspmicro</groupId>
+		<artifactId>sample-apps</artifactId>
+		<version>16.3.1</version>
+		<relativePath>../</relativePath>
+	</parent>
+
+	<artifactId>sample-custompolling</artifactId>
+	<packaging>bundle</packaging>
+	<version>${dspmicro.sample-apps.version}</version>
+	<name>Predix Machine Custom Cloud Polling Sample</name>
+
+	<dependencies>
+
+		<!-- OSGi -->
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>${org.osgi.core.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.compendium</artifactId>
+			<version>${org.osgi.compendium.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Proximetry -->
+        <dependency>
+            <groupId>com.proximetry</groupId>
+            <artifactId>agent-api</artifactId>
+            <version>${com.proximetry.agent-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+		<!-- DS Annotation Dependency -->
+        <dependency>
+            <groupId>biz.aQute.bnd</groupId>
+            <artifactId>biz.aQute.bndlib</artifactId>
+            <version>${biz.aQute.bndlib.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<Import-Package>
+							org.slf4j;version=${import.org.slf4j};provider=paxlogging,
+							org.osgi.framework;version=${import.org.osgi.framework},
+							org.osgi.service.cm;version=${import.org.osgi.service.cm},
+							org.osgi.service.component;version=${import.org.osgi.service.component},
+							com.proximetry.osgiagent.api;version=${import.com.proximetry.osgiagent.api.version},
+							${clover.bundle.import}
+						</Import-Package>
+						<Export-Package>
+						</Export-Package>
+						<Service-Component>*</Service-Component>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

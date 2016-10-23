@@ -1,0 +1,10 @@
+---
+applications:
+- name: pm-httpdata
+  memory: 1G
+  instance: 1
+  path: ./target/predixmachine-http-data-16.3.1.jar
+services:
+  - pm-httpdata-postgres
+env:
+    SPRING_PROFILES_ACTIVE: cloud

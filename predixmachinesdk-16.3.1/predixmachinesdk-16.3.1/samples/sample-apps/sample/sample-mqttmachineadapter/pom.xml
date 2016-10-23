@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ge.dspmicro</groupId>
+		<artifactId>sample-apps</artifactId>
+		<version>16.3.1</version>
+		<relativePath>../</relativePath>
+	</parent>
+
+	<artifactId>sample-mqttmachineadapter</artifactId>
+	<version>${dspmicro.sample-apps.version}</version>
+	<packaging>bundle</packaging>
+	<name>Predix Machine MQTT Machine Adapter Sample</name>
+
+	<properties>
+	    <mqtt-client.version>1.0.2</mqtt-client.version>
+	</properties>
+
+	<dependencies>
+		<!-- Runtime Dependencies -->
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>${org.osgi.core.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.compendium</artifactId>
+			<version>${org.osgi.compendium.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+            <groupId>com.ge.dspmicro</groupId>
+            <artifactId>securityadmin</artifactId>
+            <version>${dspmicro.version}</version>
+        </dependency>
+		<dependency>
+			<groupId>org.eclipse.paho</groupId>
+			<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+			<version>${mqtt-client.version}</version>
+		</dependency>
+		
+        <dependency>
+            <groupId>com.ge.dspmicro</groupId>
+            <artifactId>machinegateway-api</artifactId>
+            <version>${dspmicro.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ge.dspmicro</groupId>
+            <artifactId>device-common</artifactId>
+            <version>${dspmicro.version}</version>
+            <scope>compile</scope>
+        </dependency>
+		<dependency>
+			<groupId>com.ge.dspmicro</groupId>
+			<artifactId>machineadapter-mqtt</artifactId>
+			<version>${dspmicro.mqtt-machineadapter.project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ge.dspmicro</groupId>
+			<artifactId>mqtt-client</artifactId>
+			<version>${dspmicro.mqtt-client.project.version}</version>
+		</dependency>
+
+		<!-- DS Annotation Dependency -->
+        <dependency>
+            <groupId>biz.aQute.bnd</groupId>
+            <artifactId>biz.aQute.bndlib</artifactId>
+            <version>${biz.aQute.bndlib.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<Import-Package>
+							org.osgi.service.component;version=${import.org.osgi.service.component},
+							org.osgi.service.cm;version=${import.org.osgi.service.cm},
+							org.osgi.framework;version=${import.org.osgi.framework},
+							org.slf4j;version=${import.org.slf4j};
+							provider=paxlogging,
+                            com.ge.dspmicro.security.admin.api;version=${import.com.ge.dspmicro.security.admin.api},
+							com.ge.dspmicro.machinegateway.api;version=${import.com.ge.dspmicro.machinegateway.api},
+							com.ge.dspmicro.machinegateway.api.adapter;version=${import.com.ge.dspmicro.machinegateway.api},
+							com.ge.dspmicro.machinegateway.types;version=${import.com.ge.dspmicro.machinegateway.types},
+							com.ge.dspmicro.machineadapter.mqtt.api;version=${import.com.ge.dspmicro.machineadapter.mqtt.api},
+						    org.eclipse.paho.client.mqttv3;version=${import.org.eclipse.paho.client.mqttv3},
+						    org.eclipse.paho.client.mqttv3.persist;version=${import.org.eclipse.paho.client.mqttv3}
+						</Import-Package>
+						<Export-Package></Export-Package>
+						<Service-Component>*</Service-Component>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

@@ -1,0 +1,29 @@
+# List imports as wild card, export services are listed out.
+(org.osgi.framework.PackagePermission "*" "import")
+
+# Registered services
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.sample.storeforward.ISampleStoreForwardClient" "register")
+
+# Get other services.
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.storeforward.api.IStoreForward" "get")
+
+# Bundle Wiring for pax logging.
+(org.osgi.framework.AdaptPermission "(adaptClass=org.osgi.framework.wiring.BundleRevision)" "adapt")
+
+# allow capability access to OSGi
+(org.osgi.framework.CapabilityPermission "osgi.ee" "require")
+
+# Generic stuff
+(org.osgi.service.cm.ConfigurationPermission "*" "configure")
+(org.osgi.service.event.TopicPermission "*" "publish")
+(java.util.PropertyPermission "*" "read")
+(java.lang.RuntimePermission "getClassLoader")
+(java.lang.RuntimePermission "shutdownHooks")
+(java.lang.reflect.ReflectPermission "newProxyInPackage.*")
+(java.lang.RuntimePermission "setContextClassLoader")
+(java.lang.reflect.ReflectPermission "suppressAccessChecks")
+(java.lang.RuntimePermission "accessDeclaredMembers")
+(java.util.PropertyPermission "*" "read,write")
+(java.lang.RuntimePermission "modifyThread")
+
+(java.io.FilePermission "${predix.data.dir}/appdata/-" "read,write,delete")

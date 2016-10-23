@@ -1,0 +1,33 @@
+# If no permissions.perm file exist, bundle is granted for all permissions
+# i.e. (java.security.AllPermission "*" "*")
+
+# List imports as wild card, export services are listed out.
+(org.osgi.framework.PackagePermission "*" "import")
+(org.osgi.framework.PackagePermission "*" "export")
+
+# Registered services
+
+# Get other services.
+
+# Bundle Wiring for pax logging.
+(org.osgi.framework.AdaptPermission "(adaptClass=org.osgi.framework.wiring.BundleRevision)" "adapt")
+
+# allow capability access to OSGi
+(org.osgi.framework.CapabilityPermission "osgi.ee" "require")
+
+# Generic stuff
+(org.osgi.service.cm.ConfigurationPermission "*" "configure")
+(org.osgi.service.event.TopicPermission "*" "publish")
+(java.util.PropertyPermission "*" "read")
+(java.lang.RuntimePermission "getClassLoader")
+(java.lang.RuntimePermission "shutdownHooks")
+(java.lang.reflect.ReflectPermission "newProxyInPackage.*")
+(java.lang.RuntimePermission "setContextClassLoader")
+(java.lang.reflect.ReflectPermission "suppressAccessChecks")
+(java.lang.RuntimePermission "accessDeclaredMembers")
+
+# http client permissions
+(java.net.SocketPermission "*" "accept,connect,listen,resolve")
+
+# For SSL it reads keystores.
+(java.io.FilePermission "*" "read")

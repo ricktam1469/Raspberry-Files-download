@@ -1,0 +1,3 @@
+Sample LICENSE.txt
+
+Fill in your license agreement if you want to include one for your solution bundle.

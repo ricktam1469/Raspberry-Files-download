@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ge.dspmicro</groupId>
+		<artifactId>sample-apps</artifactId>
+		<version>16.3.1</version>
+		<relativePath>../</relativePath>
+	</parent>
+
+	<artifactId>sample-httpriver</artifactId>
+	<packaging>bundle</packaging>
+	<version>${dspmicro.sample-apps.version}</version>
+	<name>Predix Machine HTTP River Sample</name>
+
+	<dependencies>
+
+		<!-- OSGi -->
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>${org.osgi.core.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.compendium</artifactId>
+			<version>${org.osgi.compendium.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- River Dependencies -->
+		<dependency>
+        	<groupId>com.ge.dspmicro</groupId>
+	        <artifactId>river-api</artifactId>
+			<version>${dspmicro.river.project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ge.dspmicro</groupId>
+			<artifactId>httpriver-send</artifactId>
+			<version>${dspmicro.httpriver-send.project.version}</version>
+		</dependency>
+		
+		<!-- Apache Dependencies -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient-osgi</artifactId>
+			<version>${org.apache.httpcomponents.httpclient.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- DS Annotation Dependency -->
+        <dependency>
+            <groupId>biz.aQute.bnd</groupId>
+            <artifactId>biz.aQute.bndlib</artifactId>
+            <version>${biz.aQute.bndlib.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<Import-Package>						
+						    com.ge.dspmicro.river.api;version=${import.com.ge.dspmicro.river.api},
+							com.ge.dspmicro.httpriver.send.api;version=${import.com.ge.dspmicro.httpriver.send.api},
+							org.apache.http;version=${import.org.apache.http},
+							org.apache.http.client;version=${import.org.apache.http},
+							org.apache.http.client.methods;version=${import.org.apache.http},
+							org.apache.http.client.utils;version=${import.org.apache.http},
+							org.apache.http.entity;version=${import.org.apache.http},
+							org.apache.http.entity.mime.content;version=${import.org.apache.http},						
+							org.apache.http.impl.client;version=${import.org.apache.http},
+							org.osgi.framework;version=${import.org.osgi.framework},
+							org.osgi.service.component;version=${import.org.osgi.service.component},
+							org.osgi.service.cm;version=${import.org.osgi.service.cm},
+							org.slf4j;version=${import.org.slf4j}; provider=paxlogging,
+							${clover.bundle.import}
+						</Import-Package>
+						<Export-Package>
+						</Export-Package>
+						<Service-Component>*</Service-Component>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

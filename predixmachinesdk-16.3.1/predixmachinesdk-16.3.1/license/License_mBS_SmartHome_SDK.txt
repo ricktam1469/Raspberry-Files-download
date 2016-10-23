@@ -1,0 +1,109 @@
+ProSyst Software
+End User License Agreement
+(Important - Please Read Carefully)
+
+
+Article 1 - Notice to User
+
+This ProSyst End User License Agreement (EULA) is a legally valid agreement between you (in your capacity as an individual or corporate body) and ProSyst Software GmbH, which covers your use for the ProSyst Software product that accompanies this EULA and related Software components, which may include associated media, printed materials, and/or electronic documentation. All such Software and materials are referred to herein as the "Software Product". A Software license and a license key or serial number ("Software Product License"), issued to a designated user only by ProSyst or its authorized agents, is required for the installation of the Software Product. If you do not agree to the terms of the EULA, then do not install or use the Software Product or the Software Product License. By explicitly accepting this EULA, however, or by installing, copying, downloading, accessing, or otherwise using the Software Product and/or Software Product License, you are acknowledging and agreeing to be bound by the following terms:
+
+
+Article 2 - Copyright Note
+
+The Software is owned by ProSyst Software GmbH. It is protected under the Copyright Law of the Federal Republic of Germany and can additionally be protected under international Copyright Agreements or other countries Copyright Law. You may be legally responsible for any infringement of intellectual property rights that is caused or encouraged by your failure to abide the terms of this agreement.
+
+
+Article 3 - Rights of Duplication
+
+1. You may duplicate the program supplied, provided that such duplication is necessary to enable the program to be used. Such necessary duplication includes installing the program from the original data carrier onto the mass storage of the hardware used, and loading the program into the main memory.
+2. In addition, you may produce a backup copy of the program. However, only one backup copy may be produced and retained.  Such backup copy must be marked as being a backup copy of the program supplied and the manufacturer's sticker that accompanies the program documentation must be applied to the said copy.
+3. You may not produce any additional copies; this shall also include output of the program code via a printer and photocopying of the manual.
+
+
+Article 4 - Hardware, Scope of License, Restrictions
+
+1. You may use the Software on any hardware in your possession if the hardware platform is supported by ProSyst. A list of supported platforms can be found within the documentation of the software. However, if you change your hardware, you must delete the Software from the mass storage of the old hardware. Simultaneous installation, storage, or use on more than one item of hardware is not permitted.
+2. ProSyst grants you a non-exclusive and non-transferrable license for using the product.
+3. The user acknowledges the possible restrictions, that results out of the usage of particular systems, for example JAVA(tm) Virtual Machine and/or operational systems. You acknowledge that Software is not designed, licensed or intended for use in the design, construction, operation or maintenance of any nuclear facility.
+
+
+Article 5 - Decompilation and Amendments to the Program
+
+1. Translation of the program code supplied into other code forms (decompilation) and other types of retrieving the various Software engineering stages (reverse engineering) are not permitted. The interface information required in order to establish interoperability for an independently produced computer program may be requested from us, if its not found  already within the possibly enclosed documentation, against payment of a charge. The contact information of ProSyst can be found at the end of this agreement.
+2. Removal of a copy protection device or similar protection routines such as a dongle interrogation routine is not permitted in principle. You may only remove a copy protection device or protection routine if such protection mechanism impairs or prevents trouble-free use of the program and if we have failed to rectify the problem within an appropriate time despite having been requested to do so. You shall be responsible for proving that the protection mechanism impairs or prevents trouble-free operation of the program.
+3. Program changes other than those specified in Paragraph 2, and particularly changes to eliminate other errors or to extend the functional scope of the program are only permitted with the previously written approval of ProSyst.
+4. The Software may contain source code that is provided solely for reference purposes pursuant to the terms of this agreement. Source code may not be redistributed.
+5. You may not under any circumstances remove or alter any copyright notices, serial numbers, or other features that serve to identify the program.
+
+
+Article 6 - Re-sale and Re-leasing
+
+1. You may not transfer any rights and obligations under this agreement to a third party.
+2. You may not permanently sell or gift the Software and user's manual and other accompanying material to a third party.
+3. You may not lease the Software, including the user's manual and other accompanying material, to third parties on a profit-making basis.
+4. You may not give the Software to third parties.
+
+
+Article 7 - Technical Support
+
+1. If you conclude a separate Software maintenance agreement with ProSyst governing further maintenance/service of your Software program (update or upgrade service, hotline service), your guarantee rights vis-�-vis ProSyst under the Software maintenance agreement shall be based on the General Terms and Conditions governing the Software maintenance agreement.
+2. The use of any update or upgrade version that you may receive from ProSyst under a Software maintenance agreement shall also be subject to the provisions of this EULA.
+
+
+Article 8 - Obligation to Provide Information
+
+If the Software is re-sold, you shall be obliged to notify us in writing of the name and full address of the purchaser. Contact Information of ProSyst can be found at the end of this license agreement.
+
+
+Article 9 - Warranty and Complaints
+
+1. ProSyst shall remedy any defects in the Software including the manuals and other documentation thereof reported to ProSyst by you within a warranty period of twelve months from the date of delivery of said Software. In case you are a consumer in terms of the German Civil Code, the warranty period is 24 months. ProSyst shall be entitled to remedy any such defect by modifying the Software or supplying replacement Software, at the option of ProSyst.
+2. ProSyst expressly points out that, according to the current state of the technique, it is not possible to create absolutely error-free Software.
+3. You shall notify ProSyst in writing of any evident defects in the Software including the documentation thereof, the completeness of data storage media and the functioning of fundamental program functions, using the complaint form attached to the documentation or using the ProSyst web interface, within 14 days of the receipt thereof. Where possible, all complaints shall include a detailed description of the defects found. You shall follow the instructions given on the complaint form or web interface. 
+4. In case the complaint is reasonable you shall concede ProSyst a reasonable grace period to perform subsequent deliveries or other repair actions. ProSyst shall be entitled to refuse to perform repair actions in case the costs for those repair actions would be disproportionately high. In the event that ProSyst fails to repair any defective Software or refuses to perform repair actions due to the above mentioned reasons within a reasonable grace period, you shall be entitled to rescind the contract concerned or to claim reasonable abatement of the price payable under this license agreement. You shall not be entitled to rescind the license agreement in case of minor defects.
+5. In case you make use of your warranty entitlement, and it proves that there is neither a defect nor does the defect entitle you to make use of your warranty entitlement, you, in case the claiming of warranty without cause was a willful act or omission or gross negligence, have to refund ProSyst all expenses incurred.
+6. ProSyst shall be released from its warranty obligations with respect to the practicability and/or fitness in general and/or compatibility with the Software and/or hardware you utilize. The documentation may be in English in case the Software is not yet thoroughly located in the specific market. The same shall apply in case the Software can only be delivered in an English version.
+7. ProSyst shall be released from its warranty obligations with respect to the Software in the event that the serial or license number, type designations or other characteristic marks of the Software have been deleted or obliterated. ProSyst shall also be released from its warranty obligations in the event that any modifications are made to the Software without the specific written approval of ProSyst, always provided that you shall be entitled to prove that such modifications are not connected with the defect which has occurred and do not significantly impede diagnostic and remedial action with respect to said defect. Such proof shall not be deemed to constitute approval by ProSyst of such modification. ProSyst shall be released from its warranty obligations with respect to the Software used by you in an operating environment other than that specified in the documentation of said Software.
+8. Any defects in the Software which cannot be detected immediately in the course of a normal inspection shall be reported to ProSyst by you within eight working days from the detection thereof, following the requirements for complaints stated in the documentation or at ProSyst's web interface.
+9. The warranty obligations of ProSyst to persons or organizations registered or subject to compulsory registration in the commercial register or register of companies shall be governed by �� 377 ff. HGB (German Commercial Code).
+10. In the event that you fail to meet the requirements stated in these EULA concerning complaints, you shall be deemed to have accepted the Software with the defects detected.
+
+
+Article 10 - Liability
+
+1. The liability of ProSyst shall be limited to loss or damage caused by willful act or omission or gross negligence in compliance with the legal regulations. The liability of ProSyst in the event of slight negligence shall be limited to the event of willful or grossly breach by ProSyst of material provisions of the contract or in case of delay or impossibility. The liability of ProSyst in the event of slight negligence shall be limited to loss or damage which is typical and foreseeable. Nothing contained herein shall be deemed as limiting the liability of ProSyst for personal injury, defects of title and in accordance with the provisions of the Products Liability Act or the German Data Protection Act. 
+2. In case of a claim against ProSyst due to Warranty and Complaints (Art. 9) or Liability your contributory negligence to be taken into account especially in cases of insufficient error messages and/or complaints and/or insufficient data storage.
+3. With regard to the destruction of data, ProSyst shall only be liable in the events mentioned in 1. and only if you have ensured that the data was backed up by you and thus can be reconstructed with reasonable efforts.
+4. ProSyst shall not be responsible for errors caused by the data of yours, your applications, or other hardware or Software or developed or used by you, or by errors in third party products not serviced by ProSyst.
+
+
+Article 11 - Duration of the License
+
+1. The license is granted for an unlimited period unless not otherwise stipulated in writing. The license shall automatically become invalid, without any requirement for a legal declaration to this effect, if you contravene any provision of this license agreement.
+2. If the license is terminated, you shall be obliged to destroy the Software and all copies of the Software, or return them to ProSyst without reimbursement of the product price. You may terminate the license and the license agreement at any time by destroying the Software and any copies thereof.
+
+
+Article 12 - Export Restrictions
+
+You will not export (including transferring electronically over any network, including the Internet) or re-export the Software Product or any part thereof to any country, person, or entity (may it even be to foreign units of your own company) in violation to the export restrictions of your country.
+
+
+Article 13 - Miscellaneous Provisions
+
+1. This license agreement is subject to the laws of the Federal Republic of Germany.
+2. If provisions of this license agreement are invalid or become invalid, this shall not affect the validity of the remaining provisions. Instead, an invalid clause shall be replaced by a clause that corresponds as closely as possible to the meaning and objective of the invalid provision.
+3. All rights not expressly granted within this contract are reserved by ProSyst.
+4. No subsidiary agreements have been made. Amendments to this license agreement must be effected in writing. The same applies to the revocation of this clause governing the requirement for written form.
+5. JAVA is a registered trademark of Oracle Corporation. All other trademarks are registered by their respective owners.
+
+
+Article 14 - Third Party Code
+
+Software may contain third party code. Additional copyright notices and license terms applicable to such portions of the Software are explained in the THIRDPARTYLICENSEREADME file accessible at
+http://dz.prosyst.com/pdoc/Third-party-licenses/mBS_SH_SDK/THIRDPARTYLICENSEREADME.txt. 
+
+
+Article 15 - Contact Information
+
+If you have any questions about this EULA, or if you want to contact ProSyst for any reason, please direct all correspondence to ProSyst Software GmbH, Aachener Str. 222, D-50931 Cologne, Germany, or leave an email at info@prosyst.com.
+

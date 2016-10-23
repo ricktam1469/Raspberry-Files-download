@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ge.predixsdk</groupId>
+	<artifactId>utilities</artifactId>
+	<version>16.3.1</version>
+	<name>Predix Machine SDK Generate Utilities</name>
+	<packaging>pom</packaging>
+
+	<properties>
+		<!-- properties for building the eclipse -->
+		<eclipse.archive>property from commandline</eclipse.archive>
+		<eclipse.folder.name>eclipse</eclipse.folder.name>
+		<eclipse.container.type>tar.gz</eclipse.container.type>
+		<eclipse.executable>eclipse</eclipse.executable>
+
+		<!-- properties for running the headless eclipse -->
+
+		<!-- absolute path to an Eclipse installation -->
+		<eclipse.home>${basedir}/target/${eclipse.folder.name}</eclipse.home>
+		<!-- absolute path to the SDK runtime folder -->
+		<runtime.dir>${basedir}/target/runtime/runtime/</runtime.dir>
+		<!-- output format of the generated OSGi image - directory, zip, tar, tgz, 
+			bz2 -->
+		<output.format>directory</output.format>
+
+        <!-- These should be passed into the maven command for each image to generate. 
+            mvn exec:exec -Dimage.file=tid_predix-debug.img -Doutput.folder=PredixMachine-debug 
+            mvn exec:exec -Dimage.file=tid_predix-release.img -Doutput.folder=PredixMachine
+        -->
+		<image.file>tid_predix-provision.img</image.file>
+		<image.folder>${runtime.dir}/machine/metadata/ti-defs/</image.folder>
+		<!-- Folder name to place the generated image -->
+		<output.folder>Provision</output.folder>
+
+	</properties>
+
+	<build>
+		<finalName>${eclipse.folder.name}</finalName>
+		<plugins>
+
+			<!-- unzip or untar the eclipse archive -->
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<taskdef resource="net/sf/antcontrib/antcontrib.properties"
+									classpathref="maven.plugin.classpath" />
+								<if>
+                                    <contains string="${eclipse.archive}" substring="-macosx-"/>
+                                    <!--  special case Mac Mars/Neon -->
+                                    <then>
+                                        <echo message="Macintosh Eclipse Mars/Neon..."/>
+                                        <gunzip src="${eclipse.archive}" dest="target/eclipse.tar" />
+                                        <untar src="target/eclipse.tar" dest="target/eclipse" />
+                                        <delete file="target/eclipse.tar" />
+                                        <chmod file="${eclipse.home}/${eclipse.executable}" perm="700"/>
+                                        <copy todir="target/eclipse/Eclipse.app/Contents/Eclipse/dropins">
+                                            <fileset dir="../../eclipse-plugins/plugins/"/>
+                                        </copy>
+                                    </then>
+                                    
+								    <else>
+										<if>
+											<equals arg1="${eclipse.container.type}" arg2="tar.gz" />
+											
+											<then>
+												<gunzip src="${eclipse.archive}" dest="target/eclipse.tar" />
+												<untar src="target/eclipse.tar" dest="target/" />
+												<delete file="target/eclipse.tar" />
+		                                        <chmod file="${eclipse.home}/${eclipse.executable}" perm="700"/>
+											</then>
+		
+											<else>
+												<unzip src="${eclipse.archive}" dest="target/" />
+											</else>
+										</if>
+										<copy todir="target/eclipse/dropins">
+		                                    <fileset dir="../../eclipse-plugins/plugins/"/>
+		                                </copy>
+	                               </else>
+	                            </if>   
+								<unzip src="../../eclipse-plugins/plugins/com.ge.predixsdk.branding_16.3.1.v20160920.jar" dest="target/runtime" />
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>ant-contrib</groupId>
+						<artifactId>ant-contrib</artifactId>
+						<version>20020829</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <configuration>
+                    <!-- -Dexec.args= to the command line like: mvn exec:exec -Dexec.args="xxx" -->
+                    <executable>${eclipse.home}/${eclipse.executable}</executable>
+                    <arguments>
+                        <argument>-application</argument>
+                        <argument>com.prosyst.tools.builder.core.generator</argument>
+                        <argument>-data</argument>
+                        <argument>${eclipse.home}/x</argument>
+                        <argument>-desc</argument>
+                        <argument>${image.folder}/${image.file}</argument>
+                        <argument>-runtime</argument>
+                        <argument>${runtime.dir}</argument>
+                        <argument>-output</argument>
+                        <argument>${basedir}/${output.folder}</argument>
+                        <argument>-outformat</argument>
+                        <argument>${output.format}</argument>
+                        <argument>-clean</argument>
+                        <argument>-noSplash</argument>
+                        <argument>--launcher.suppressErrors</argument>
+                        <argument>-vmargs</argument>
+                        <argument>-Dbuilder.headless=true</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>macosx-eclipse</id>
+			<activation>
+				<os>
+					<family>mac</family>
+				</os>
+			</activation>
+			<properties>
+				<eclipse.executable>Eclipse.app/Contents/MacOS/eclipse</eclipse.executable>
+				<eclipse.container.type>tar.gz</eclipse.container.type>
+			</properties>
+		</profile>
+		<profile>
+			<id>windows-eclipse</id>
+			<activation>
+				<os>
+					<family>windows</family>
+				</os>
+			</activation>
+			<properties>
+				<eclipse.executable>eclipsec</eclipse.executable>
+				<eclipse.container.type>zip</eclipse.container.type>
+			</properties>
+		</profile>
+	</profiles>
+
+</project>
